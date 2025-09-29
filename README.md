@@ -58,22 +58,22 @@ npm run dev
 ---
 ## 📌 Consultas disponibles
 
-1. ## GET http://localhost:3000/images-by-date
+1. ## GET /images-by-date
 📌 Descripción:
 Lista imágenes de un día específico (yyyyMMdd) en el bucket S3.
 Permite filtrar por estado de la operación (status → carpetas como faces/visitas/, faces/errors/), elegir formato de retorno (urls, bytes, base64) y opcionalmente solicitar restauración automática de objetos en Deep Archive.
 
-📥 Parámetros Requeridos:
+### 📥 Parámetros Requeridos:
 - date (string, yyyyMMdd)
 
-📤 Ejemplo de uso:
+### 📤 Ejemplo de uso:
 
  ```bash
  curl -X 'GET' \
     'http://localhost:3000/images-by-date?date=20250922&status=OK' \
     -H 'accept: */*'
 ```
-✅ Ejemplo de respuesta exitosa:
+#### ✅ Ejemplo de respuesta exitosa:
 
  ```json
 {
@@ -114,7 +114,7 @@ Permite filtrar por estado de la operación (status → carpetas como faces/visi
 
 ```
 
-❌ Ejemplos de error:
+#### ❌ Ejemplos de error:
 
  ```json
 {
@@ -182,7 +182,7 @@ Ideal para rastrear todas las imágenes que pertenecen a una operación específ
   "message": "No se encontraron imágenes para ese transactionId."
 }
 ```
-3. ## GET http://localhost:3000/images-by-faceid-date
+3. ## GET /images-by-faceid-date
 📌 Descripción:
 Busca imágenes específicas asociadas a un faceId y una fecha.
 Útil para revisar todos los registros de un rostro en un día concreto.
@@ -237,7 +237,7 @@ Busca imágenes específicas asociadas a un faceId y una fecha.
   "message": "Debe proporcionar el faceId."
 }
 ```
-4. ## GET http://localhost:3000/images-restore
+4. ## GET /images-restore
 📌 Descripción:
 Permite solicitar manualmente la restauración (rehidratación) de una imagen archivada en Glacier/Deep Archive para poder descargarla o generar URL temporal.
 
