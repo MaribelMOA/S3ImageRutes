@@ -131,22 +131,22 @@ Permite filtrar por estado de la operación (status → carpetas como faces/visi
 ```
 
 2. ## GET http://localhost:3000/images-by-transaction
-📌 Descripción:
+### 📌 Descripción:
 Busca imágenes asociadas a un **transactionId.**
 Ideal para rastrear todas las imágenes que pertenecen a una operación específica.
 
-📥 Parámetros Requeridos:
+### 📥 Parámetros Requeridos:
 - tx: ID de transacción a buscar (string).
 - date (string, yyyyMMdd)
 
-📤 Ejemplo de uso:
+### 📤 Ejemplo de uso:
 
  ```bash
  curl -X 'GET' \
     'http://localhost:3000/images-by-transaction?tx=transaction8c5f29e6&return=bytes' \
     -H 'accept: */*'
 ```
-✅ Ejemplo de respuesta exitosa:
+#### ✅ Ejemplo de respuesta exitosa:
 
  ```json
 {
@@ -167,7 +167,7 @@ Ideal para rastrear todas las imágenes que pertenecen a una operación específ
 
 ```
 
-❌ Ejemplos de error:
+#### ❌ Ejemplos de error:
 
  ```json
 {
@@ -183,15 +183,15 @@ Ideal para rastrear todas las imágenes que pertenecen a una operación específ
 }
 ```
 3. ## GET /images-by-faceid-date
-📌 Descripción:
+### 📌 Descripción:
 Busca imágenes específicas asociadas a un faceId y una fecha.
 Útil para revisar todos los registros de un rostro en un día concreto.
 
-📥 Parámetros Requeridos:
+### 📥 Parámetros Requeridos:
 - faceId / faceid: ID de rostro.(string).
 - date (string, yyyyMMdd)
 
-📤 Ejemplo de uso:
+#### 📤 Ejemplo de uso:
 
  ```bash
  curl -X 'GET' \
@@ -199,7 +199,7 @@ Busca imágenes específicas asociadas a un faceId y una fecha.
 ' \
     -H 'accept: */*'
 ```
-✅ Ejemplo de respuesta exitosa:
+#### ✅ Ejemplo de respuesta exitosa:
 
  ```json
 {
@@ -229,7 +229,7 @@ Busca imágenes específicas asociadas a un faceId y una fecha.
 
 ```
 
-❌ Ejemplos de error:
+#### ❌ Ejemplos de error:
 
  ```json
 {
@@ -238,16 +238,16 @@ Busca imágenes específicas asociadas a un faceId y una fecha.
 }
 ```
 4. ## GET /images-restore
-📌 Descripción:
+### 📌 Descripción:
 Permite solicitar manualmente la restauración (rehidratación) de una imagen archivada en Glacier/Deep Archive para poder descargarla o generar URL temporal.
 
 ⚠️ Necesitas permisos IAM para s3:RestoreObject.
 
-📥 Parámetros Requeridos:
+### 📥 Parámetros Requeridos:
 - faceId / faceid: ID de rostro.(string).
 - date (string, yyyyMMdd)
 
-📤 Ejemplo de uso:
+### 📤 Ejemplo de uso:
 
  ```bash
  curl -X 'GET' \
@@ -264,7 +264,7 @@ Content-Type: application/json
 }
 ```
 
-✅ Respuesta exitosa
+#### ✅ Respuesta exitosa
 
  ```json
 {
@@ -276,7 +276,7 @@ Content-Type: application/json
 }
 ```
 
-Si ya había un restore en progreso:
+#### Si ya había un restore en progreso:
 
  ```json
 {
@@ -286,7 +286,7 @@ Si ya había un restore en progreso:
 }
 
 ```
-Si ya había un restore en progreso:
+#### Si ya había un restore en progreso:
 
  ```json
 {
@@ -298,9 +298,7 @@ Si ya había un restore en progreso:
 
 ```
 
-❌ Ejemplos de error:
-
-🔴 Posibles errores
+#### 🔴 Posibles errores
 
 - 403 AccessDenied: el usuario IAM no tiene s3:RestoreObject.
 - 400 Bad Request: falta key.
