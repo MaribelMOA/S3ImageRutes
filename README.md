@@ -7,11 +7,12 @@ API para listar y recuperar imágenes en S3 filtrando por fecha, transacción o 
 
 Ejemplo de llamada firmada:
 
+```bash
 curl --request GET 'https://<api-id>.execute-api.us-east-2.amazonaws.com/dev/images/{rute_name}' \
   --aws-sigv4 aws:amz:us-east-2:execute-api \
   --user "${AWS_ACCESS_KEY_ID}:${AWS_SECRET_ACCESS_KEY}" \
   --header 'Accept: application/json'
-
+```
 
 ---
 
