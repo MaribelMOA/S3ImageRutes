@@ -1,6 +1,5 @@
 # S3ImageRutes📸
 
-Proyecto en .NET Web API para reconocimiento facial usando la cámara del sistema, detección con OpenCV y comparación/registro en AWS Rekognition. Las visitas se almacenan localmente en un archivo `visits.json`.
 API para listar y recuperar imágenes en S3 filtrando por fecha, transacción o faceId, con soporte para objetos archivados en Glacier/Deep Archive y solicitud de restore.
 
 🔐 Auth: todas las rutas llamadas del API de AWS requieren firma AWS SigV4 (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY).
