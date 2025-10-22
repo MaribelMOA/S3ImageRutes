@@ -16,6 +16,7 @@ const FaceStatus = {
   CAPTURE_FAILED: "CAPTURE_FAILED",
   AWS_ERROR: "AWS_ERROR",
   EXCEEDS_LIMIT: "EXCEEDS_LIMIT",
+  MANY_FACES: "MANY_FACES"
 };
 
 const statusToPrefix = (s) => {
@@ -26,7 +27,8 @@ const statusToPrefix = (s) => {
     case FaceStatus.PLAN_FAILURE:   return "faces/planfailure/";
     case FaceStatus.CAPTURE_FAILED: return "faces/errors/";
     case FaceStatus.AWS_ERROR:      return "faces/awsError/";
-    case FaceStatus.EXCEEDS_LIMIT:      return "faces/exceedsLimit/";
+    case FaceStatus.EXCEEDS_LIMIT:  return "faces/exceedsLimit/";
+    case FaceStatus.MANY_FACES:     return "faces/manyFaces";
     default:                        return "faces/errors/";
   }
 };
@@ -39,6 +41,7 @@ const ALL_PREFIXES = [
   "faces/errors/",
   "faces/aws_error/",
   "faces/exceedsLimit/",
+  "faces/manyFaces",
 ];
 
 const IMAGE_EXTS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
